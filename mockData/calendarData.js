@@ -1,25 +1,43 @@
 const jobData = [
-    {
-      name: 'Sally Turner',
-      time: {
-        start: '7am',
-        end: '10am',
-      }
-    },
+    // {
+    //   name: 'Sally Turner',
+    //   time: {
+    //     start: {
+    //       hour: 8,
+    //       unit: "am"
+    //     },
+    //     end: {
+    //       hour: 10,
+    //       unit: "am"
+    //     }
+    //   }
+    // },
     {
       name: 'Billy Sanders',
       time: {
-        start: '2pm',
-        end: '5pm',
+        start: {
+          hour: 11,
+          unit: "am"
+        },
+        end: {
+          hour: 3,
+          unit: "pm"
+        }
       }
     },
-    {
-      name: 'Tommy Alpaca',
-      time: {
-        start: '12pm',
-        end: '1pm',
-      }
-    },
+    // {
+    //   name: 'Tommy Alpaca',
+    //   time: {
+    //     start: {
+    //       hour: 4,
+    //       unit: "pm"
+    //     },
+    //     end: {
+    //       hour: 7,
+    //       unit: "pm"
+    //     }
+    //   }
+    // },
   ];
 
   export default jobData ;

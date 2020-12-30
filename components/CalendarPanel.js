@@ -6,7 +6,7 @@ const CalendarPanel = ({ job }) => {
   const { name } = job;
     return (
         <View style={styles.jobPanel}>
-          <Text style={styles.timeFont}>{start}-{end}</Text>
+          <Text style={styles.timeFont}>{start.hour + start.unit}-{end.hour + end.unit}</Text>
           <Text>{name}</Text>
         </View>
       )
