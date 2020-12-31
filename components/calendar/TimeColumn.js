@@ -1,23 +1,19 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { StyleSheet, View, Text } from 'react-native';
 import CalendarPanel from './CalendarPanel';
 
-
-const TimeColumn = ({ clockTime, correspondingJob }) => {
-    const [hasJob, setHasJob] = useState(true);
+const TimeColumn = ({ correspondingJob }) => {
     return (
-        <View style={styles.container}>
-            <View style={styles.timeRow}>
-                <Text style={styles.timeFont}>{clockTime.hour + clockTime.unit}</Text>
-                <View style={styles.line}></View>
+        <View style={styles.timeRow}>
+            <View>
+
             </View>
             {/* {(correspondingJob) ? <CalendarPanel job={correspondingJob}/> : null } */}
         </View>
     )
-};
+}
 
 export default TimeColumn;
-
 
 const styles = StyleSheet.create({
     container: {
@@ -26,12 +22,9 @@ const styles = StyleSheet.create({
       backgroundColor: '#fff',
     },
     timeRow: {
-      flexDirection: 'row',
-      justifyContent: 'center',
-      alignItems: 'center',
-      width: 350,
-      height: 100,
-      marginLeft: 7
+      flex: 10,
+      borderTopWidth: 1,
+      borderTopColor: 'gray'
     },
     timeFont: {
       fontSize: 18

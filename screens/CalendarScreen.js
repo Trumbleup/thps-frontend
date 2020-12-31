@@ -6,9 +6,9 @@ import Calendar from '../components/calendar/Calendar';
 
 const CalendarScreen = ({ navigation }) => {
     return (
-      <ScrollView style={styles.container}>
+      <View style={styles.container}>
         <Calendar />
-      </ScrollView>
+      </View>
     )
 }
 

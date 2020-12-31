@@ -1,6 +1,6 @@
 import React from 'react';
-import { StyleSheet, View, Text } from 'react-native';
-import TimeColumn from './TimeColumn';
+import { StyleSheet, ScrollView, Text } from 'react-native';
+import TimeRow from './TimeRow';
 import jobData  from '../../mockData/calendarData';
 
 
@@ -78,20 +78,20 @@ const getCorrespondingJob = (clockTime, data) => {
 
 ///// Component
 
-const TimeColumnArray = () => {
+const TimeRowArray = () => {
   return (
-    <View>
+    <ScrollView>
       {
         getClockTimes().map((clockTime, key) => {
           const correspondingJob = getCorrespondingJob(clockTime, jobData);
-          return <TimeColumn clockTime={clockTime} key={key} correspondingJob={(correspondingJob) ? correspondingJob : null} />
+          return <TimeRow clockTime={clockTime} key={key} correspondingJob={(correspondingJob) ? correspondingJob : null} />
         })
       }   
-    </View>
+    </ScrollView>
   )
 };
 
-export default TimeColumnArray
+export default TimeRowArray
 
 
 const styles = StyleSheet.create({
