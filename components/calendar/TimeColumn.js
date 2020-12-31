@@ -3,7 +3,7 @@ import { StyleSheet, View, Text } from 'react-native';
 import CalendarPanel from './CalendarPanel';
 
 
-const TimeRow = ({ clockTime, correspondingJob }) => {
+const TimeColumn = ({ clockTime, correspondingJob }) => {
     const [hasJob, setHasJob] = useState(true);
     return (
         <View style={styles.container}>
@@ -11,12 +11,12 @@ const TimeRow = ({ clockTime, correspondingJob }) => {
                 <Text style={styles.timeFont}>{clockTime.hour + clockTime.unit}</Text>
                 <View style={styles.line}></View>
             </View>
-            {(correspondingJob) ? <CalendarPanel job={correspondingJob}/> : null }
+            {/* {(correspondingJob) ? <CalendarPanel job={correspondingJob}/> : null } */}
         </View>
     )
 };
 
-export default TimeRow;
+export default TimeColumn;
 
 
 const styles = StyleSheet.create({

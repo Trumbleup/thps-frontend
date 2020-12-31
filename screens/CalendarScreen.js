@@ -1,13 +1,13 @@
 import React from 'react';
 import { Button, StyleSheet, Text, View, ScrollView } from 'react-native';
-import TimeRowArray from '../components/TimeRowArray';
+import Calendar from '../components/calendar/Calendar';
 
 
 
 const CalendarScreen = ({ navigation }) => {
     return (
       <ScrollView style={styles.container}>
-        <TimeRowArray />
+        <Calendar />
       </ScrollView>
     )
 }

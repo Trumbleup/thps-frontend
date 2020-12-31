@@ -1,7 +1,7 @@
 import React from 'react';
 import { StyleSheet, View, Text } from 'react-native';
-import TimeRow from './TimeRow';
-import jobData  from '../mockData/calendarData';
+import TimeColumn from './TimeColumn';
+import jobData  from '../../mockData/calendarData';
 
 
 /// Functions
@@ -50,15 +50,19 @@ const getCorrespondingJob = (clockTime, data) => {
     const scaledClockTime = clockTime.hour + 12; // ex 1pm would scale to 13
     if (start.unit == end.unit) { // Both times AM or PM, no 12am/12pm
       if (clockTime.hour == 12) {
-        if (scaledStartTime <= 12 && scaledEndTime >= 12) {
+        if (start.hour <= 12 && end.hour >= 12 && clockTime.unit == "am") {
           return job
         }
       } else if (start.hour <= clockTime.hour && end.hour >= clockTime.hour && start.unit == clockTime.unit) {
         return job
       }    
     } else if (start.unit !== end.unit) { // If the start/end have different AM/PM units
-      if (clockTime.unit == "pm" && clockTime.hour !== 12) {
+      if (clockTime.unit == "pm" && clockTime.hour != 12) {
         if (scaledStartTime <= scaledClockTime && scaledClockTime <= scaledEndTime) {
+          return job
+        }
+      } else if (clockTime.unit == "am"  && clockTime.hour != 12) {
+        if (start.hour <= clockTime.hour && clockTime.hour <= end.hour) {
           return job
         }
       } else if (clockTime.hour == 12) {
@@ -72,48 +76,22 @@ const getCorrespondingJob = (clockTime, data) => {
   return correspondingJob;
 }
 
-// const getCorrespondingJob = (clockTime, data) => {
-//   const correspondingJob = data.find(job => {
-//     const { start, end } = job.time;
-//     // console.log("clockTime.hour", clockTime.hour);
-//     // console.log("start.hour", start.hour);
-//     // console.log("end.hour", end.hour);
-//     if ( start.hour > end.hour ) { // ex. 10am when parsed is bigger than 3pm
-//       const newEndTime = end.hour + 12; // reinitialize the end time by 12
-//       const newClockTime = clockTime.hour + 12;
-//       if ( newEndTime > newClockTime ) { // if the end time is later than the selected clock time
-//         return job // this job occurs during the selected clock time
-//       } else if (clockTime.hour >= start.hour) {
-//         return job
-//       }
-//     } else if ( clockTime.hour >= start.hour )  { // for AM or PM time blocks
-//         return job
-//     }
-//   });
-//   console.log(correspondingJob);
-//   if (correspondingJob) {
-//     return correspondingJob
-//   } else {
-//     return null
-//   }
-// };
-
 ///// Component
 
-const TimeRowArray = () => {
+const TimeColumnArray = () => {
   return (
     <View>
       {
         getClockTimes().map((clockTime, key) => {
           const correspondingJob = getCorrespondingJob(clockTime, jobData);
-          return <TimeRow clockTime={clockTime} key={key} correspondingJob={(correspondingJob) ? correspondingJob : null} />
+          return <TimeColumn clockTime={clockTime} key={key} correspondingJob={(correspondingJob) ? correspondingJob : null} />
         })
       }   
     </View>
   )
 };
 
-export default TimeRowArray
+export default TimeColumnArray
 
 
 const styles = StyleSheet.create({
