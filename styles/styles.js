@@ -10,7 +10,7 @@ const screenOptionStyle = (navigation) => {
         headerTitleStyle: {
             fontWeight: 'bold'
         },
-        headerLeft: () => <Entypo name="menu" size={24} color="#fff" onPress={() => navigation.openDrawer()} />
+        headerLeft: () => <Entypo style={{marginLeft: 10}} name="menu" size={24} color="#fff" onPress={() => navigation.openDrawer()} />
     }
 
     return styling

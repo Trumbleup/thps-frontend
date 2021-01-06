@@ -1,13 +1,14 @@
 import React from 'react';
 import { Button, StyleSheet, Text, View } from 'react-native';
+import CalendarFooterButtons from './CalendarFooterButtons';
 
 
 
 
-const CalendarFooter = () => {
+const CalendarFooter = ({ setCalendarView }) => {
     return (
     <View style={styles.container}>
-        <Text style={styles.text}>Footer</Text>
+        <CalendarFooterButtons setCalendarView={setCalendarView}/>
     </View>
     )
 }
@@ -25,8 +26,4 @@ const styles = StyleSheet.create({
     borderColor: '#D3D3D3',
     
   },
-  text: {
-    fontSize: 15,
-    fontWeight: 'bold',
-  }
 });

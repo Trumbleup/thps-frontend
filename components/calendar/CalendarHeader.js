@@ -4,7 +4,7 @@ import { Button, StyleSheet, Text, View } from 'react-native';
 
 
 
-const CalendarHeader = ({ currentDate }) => {
+const CalendarHeader = ({ currentDate, calendarView }) => {
     const formattedDate = currentDate.format('ddd MMMM D, YYYY');
     return (
     <View style={styles.container}>

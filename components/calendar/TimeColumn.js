@@ -22,12 +22,12 @@ const styles = StyleSheet.create({
       backgroundColor: '#fff',
     },
     timeRow: {
-      flex: 10,
+      flex: 6,
       borderTopWidth: 1,
       borderTopColor: 'gray'
     },
     timeFont: {
-      fontSize: 18
+      fontSize: 14
     },
     line: {
       flex: 1,
