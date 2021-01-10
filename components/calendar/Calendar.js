@@ -9,13 +9,16 @@ import { ScrollView } from 'react-native-gesture-handler';
 
 const Calendar = () => {
     const [ currentDate, setCurrentDate ] = useState(dayjs());
-    const [ calendarView, setCalendarView ] = useState('week');
+    const [ calendarView, setCalendarView ] = useState('today');
+    // console.log(dayjs('2021-01-08T18:38:46-06:00').format('h'));
     return (
         <View style={styles.container}>
             <CalendarHeader currentDate={currentDate} calendarView={calendarView}/>
-            <ScrollView style={styles.calendarView}>
-                { (calendarView == 'today') ?  <CalendarTodayView /> : (calendarView == 'week') ? <CalendarWeekView /> : null }
-            </ScrollView>
+            <View style={styles.scrollContainer}>
+                <ScrollView>
+                    { (calendarView == 'today') ?  <CalendarTodayView /> : (calendarView == 'week') ? <CalendarWeekView /> : null }
+                </ScrollView>
+            </View>
             <CalendarFooter setCalendarView={setCalendarView}/>
         </View>
     )
@@ -28,7 +31,7 @@ const styles = StyleSheet.create({
       flex: 1,
       flexDirection: 'column',
     },
-    calendarView: {
-        flex: 6
+    scrollContainer: {
+        flex: 11
     }
   });

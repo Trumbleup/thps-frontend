@@ -4,11 +4,8 @@ import CalendarPanel from './CalendarPanel';
 
 const TimeColumn = ({ correspondingJob }) => {
     return (
-        <View style={styles.timeRow}>
-            <View>
-
-            </View>
-            {/* {(correspondingJob) ? <CalendarPanel job={correspondingJob}/> : null } */}
+        <View style={styles.timeColumn}>
+            {(correspondingJob) ? <CalendarPanel job={correspondingJob}/> : null }
         </View>
     )
 }
@@ -16,23 +13,9 @@ const TimeColumn = ({ correspondingJob }) => {
 export default TimeColumn;
 
 const styles = StyleSheet.create({
-    container: {
-      flex: 1,
-      flexDirection: 'column',
-      backgroundColor: '#fff',
-    },
-    timeRow: {
+    timeColumn: {
       flex: 6,
       borderTopWidth: 1,
-      borderTopColor: 'gray'
-    },
-    timeFont: {
-      fontSize: 14
-    },
-    line: {
-      flex: 1,
-      height: 1,
-      backgroundColor: 'gray',
-      marginLeft: 10
+      borderTopColor: 'gray',
     },
   });

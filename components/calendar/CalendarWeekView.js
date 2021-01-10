@@ -13,7 +13,7 @@ export default CalendarWeekView;
 
 const styles = StyleSheet.create({
     container: {
-      flex: 6,
+      flex: 1,
       backgroundColor: '#fff',
       alignItems: 'center',
       justifyContent: 'center',

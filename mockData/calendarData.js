@@ -2,40 +2,22 @@ const jobData = [
     {
       name: 'Sally Turner',
       time: {
-        start: {
-          hour: 8,
-          unit: "am"
-        },
-        end: {
-          hour: 10,
-          unit: "am"
-        }
+        start: '2021-01-08T11:38:46-06:00',
+        end: '2021-01-09T12:00:00-06:00',
       }
     },
     {
       name: 'Billy Sanders',
       time: {
-        start: {
-          hour: 11,
-          unit: "am"
-        },
-        end: {
-          hour: 3,
-          unit: "pm"
-        }
+        start: '2021-01-08T14:38:46-06:00',
+        end: '2021-01-09T16:00:00-06:00',
       }
     },
     {
       name: 'Tommy Alpaca',
       time: {
-        start: {
-          hour: 5,
-          unit: "pm"
-        },
-        end: {
-          hour: 7,
-          unit: "pm"
-        }
+        start: '2021-01-08T17:38:46-06:00',
+        end: '2021-01-09T19:00:00-06:00',
       }
     },
   ];
