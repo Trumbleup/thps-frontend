@@ -4,7 +4,7 @@ import { Entypo } from '@expo/vector-icons';
 const screenOptionStyle = (navigation) => {
     const styling = {
         headerStyle: {
-            backgroundColor: 'blue'
+            backgroundColor: '#00205B'
         },
         headerTintColor: '#fff',
         headerTitleStyle: {
