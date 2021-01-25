@@ -11,12 +11,13 @@ import LoginScreen from './screens/LoginScreen';
 
 const App = () => {
   const [signedIn, setSignedIn] = useState(false);
+  const [modalVisible, setModalVisible] = useState(false);
   if (!signedIn) {
     return <LoginScreen setSignedIn={setSignedIn}/>
   } else {
       return (
         <NavigationContainer>
-          <DrawerNavigator setSignedIn={setSignedIn}/>
+          <DrawerNavigator setSignedIn={setSignedIn} modalVisible={modalVisible} setModalVisible={setModalVisible}/>
         </NavigationContainer>
       )
   }
